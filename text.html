@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #66b3d6;
+            margin: 0%;
+            padding: 0%;
+        }
+        .heading{
+            text-align: center;
+            color: black;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .box{
+            border: 3px solid black;
+            border-radius: 30px;
+            text-align: center;
+            display: flex;
+            padding: 5px;
+            margin: 7px;
+            height: 40px;
+            width: 155px;
+        }
+        .box:hover{
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px 2px #3faadb;
+            transition: 0.5s;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .result{
+            margin: 18px;
+            text-align: center;
+            font-size: 29px;
+        }
+        .btn{
+            text-align: center;
+            height: 30px;
+            width: 190px;
+            margin: 6px;
+            border-radius: 6px;
+        }
+        .btn:hover{
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px 2px #3faadb;
+            transition: 0.5s;
+        }
+        .click{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .foot{
+            font-size: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Text Matcher</h1>
+    <div class="container">
+    <input class="box" type="text" id="text1" placeholder="Enter First Text" onkeyup="sum()"/>
+    <input class="box" type="text" id="text2" placeholder="Enter Second Text" onkeyup="sum()"/>
+    </div>
+    <div class="result" id="ans">Result:</div>
+    <div class="click">
+    <button class="btn" id="btn" onclick="reset()">Reset</button>
+    <br/>
+    </div>
+    <h1 class="foot"><i>Have A Nice Day!!!!!</i></h1>
+    <script>
+        const inputBox1 = document.getElementById("text1");
+        const inputBox2 = document.getElementById("text2");
+        const answertText = document.getElementById("ans");
+        function sum() {
+        if((inputBox1.value) == (inputBox2.value))
+        answertText.innerText='Value Is Matched'
+        else
+        answertText.innerText='Value Is Not Matched'
+    }
+        function reset() {
+          inputBox1.value = " ";
+          inputBox2.value = " ";
+          answertText.innerText = `Result :`;
+        }
+      </script>
+  
+</body>
+</html>
